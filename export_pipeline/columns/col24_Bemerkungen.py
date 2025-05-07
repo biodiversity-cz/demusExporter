@@ -1,12 +1,13 @@
 from .base import BaseStep
 import pandas
-class Column21_Fundort(BaseStep):
+class Column24_Bemerkungen(BaseStep):
 
-    _column_name="Fundort"
+    _column_name="Bemerkungen"
 
     def compute(self) -> pandas.DataFrame:
+        self._sbirky['Pozn_SX'] = self._sbirky['Pozn_SX'].fillna('')
         result = self._sbirky.apply(
-            lambda row: f"{row.get('XOrigLok_SX', '')} {row.get('Herbar_SX', '')}".strip(),
+            lambda row: f"{row.get('Pozn_SX', '')}".strip(),
             axis=1
         )
 
