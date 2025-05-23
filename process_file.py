@@ -1,4 +1,4 @@
-from excel_writer import write_to_excel
+from workers.excel_writer import write_to_excel
 from export_pipeline.columns.col10_Nummer import Column10_Nummer
 from export_pipeline.columns.col12_datum import Column12_datum
 
@@ -34,10 +34,8 @@ from export_pipeline.columns.col25_col32_coords import Columns25_32_coords
 from export_pipeline.pipeline import Pipeline
 from export_pipeline.columns.col1_id import Column1_ID
 
-OUTPUT_PATH = ("output/2.xlsx")
-MDB_PATH = "data/Bezny.mdb"
 
-def main():
+def process_uploaded_file(input_path, output_path):
     steps = [
         Column1_ID(),
         Column2_HerbNummer(),
@@ -72,11 +70,6 @@ def main():
         Column39_digital_image_obs(),
         Column40_observation()
     ]
-
-    pipeline = Pipeline(steps, MDB_PATH)
+    pipeline = Pipeline(steps, input_path)
     output_data = pipeline.run()
-    write_to_excel(output_data, OUTPUT_PATH)
-    print("Conversion completed!")
-
-if __name__ == "__main__":
-    main()
+    write_to_excel(output_data, output_path)

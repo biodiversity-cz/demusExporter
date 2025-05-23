@@ -1,7 +1,7 @@
 from typing import List
 import pandas as pd
 
-from mdb_reader import read_table
+from workers.mdb_reader import read_table
 
 class Pipeline:
     TBL_SBIRKY = "Sbirky"
