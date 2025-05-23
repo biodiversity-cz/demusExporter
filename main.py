@@ -34,8 +34,8 @@ from export_pipeline.columns.col25_col32_coords import Columns25_32_coords
 from export_pipeline.pipeline import Pipeline
 from export_pipeline.columns.col1_id import Column1_ID
 
-OUTPUT_PATH = "output/1.xlsx"
-MDB_PATH = "data/Do_jedne_tabulky.mdb"
+OUTPUT_PATH = ("output/2.xlsx")
+MDB_PATH = "data/Bezny.mdb"
 
 def main():
     steps = [
