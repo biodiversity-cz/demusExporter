@@ -24,7 +24,6 @@ from export_pipeline.columns.col39_digital_image_obs import Column39_digital_ima
 from export_pipeline.columns.col3_collectionID import Column3_CollectionID
 from export_pipeline.columns.col40_observation import Column40_observation
 from export_pipeline.columns.col4_Collection import Column4_Collection
-from export_pipeline.columns.col50_helper import Column50_helper
 from export_pipeline.columns.col5_status import Column5_status
 from export_pipeline.columns.col6_taxon import Column6_taxon
 from export_pipeline.columns.col7_Sammler import Column7_Sammler
@@ -47,7 +46,6 @@ def main():
         Column5_status(),
         Column6_taxon(),
         Column7_Sammler(),
-        Column50_helper(),
         Column8_series(),
         Column9_series_number(),
         Column10_Nummer(),
