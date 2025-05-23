@@ -5,9 +5,9 @@ class Column24_Bemerkungen(BaseStep):
     _column_name="Bemerkungen"
 
     def compute(self) -> pandas.DataFrame:
-        self._sbirky['Pozn_SX'] = self._sbirky['Pozn_SX'].fillna('')
+        self._sbirky['Pozn_S'] = self._sbirky['Pozn_S'].fillna('')
         result = self._sbirky.apply(
-            lambda row: f"{row.get('Pozn_SX', '')}".strip(),
+            lambda row: f"{row.get('Pozn_S', '')}".strip(),
             axis=1
         )
 

@@ -6,7 +6,7 @@ class Column2_HerbNummer(BaseStep):
 
     def compute(self) -> pandas.DataFrame:
         result = self._sbirky.apply(
-            lambda row: f"{row.get('PorC_SX', '')}{'/' + row.get('Lomeni_SX', '') if row.get('Lomeni_SX', '') != '_' else ''}".strip(),
+            lambda row: f"{row.get('PorC_S', '')}{'/' + row.get('Lomeni_S', '') if row.get('Lomeni_S', '') != '_' else ''}".strip(),
             axis=1
         )
 

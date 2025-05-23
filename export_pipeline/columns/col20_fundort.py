@@ -5,9 +5,9 @@ class Column20_Fundort(BaseStep):
     _column_name="Fundort"
 
     def compute(self) -> pandas.DataFrame:
-        self._sbirky['Lokalita_SX'] = self._sbirky['Lokalita_SX'].fillna('')
+        self._sbirky['OrigLok_S'] = self._sbirky['OrigLok_S'].fillna('')
         result = self._sbirky.apply(
-            lambda row: f"{row.get('Lokalita_SX', '')}".strip(),
+            lambda row: f"{row.get('OrigLok_S', '')}".strip(),
             axis=1
         )
 

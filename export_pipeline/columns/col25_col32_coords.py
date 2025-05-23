@@ -40,7 +40,7 @@ class Columns25_32_coords(BaseStep):
 
 
         def parse_row(row):
-            grid = str(row.get('Grid_SX', '')).strip()
+            grid = str(row.get('Grid_S', '')).strip()
 
             if not grid:
                 return [None] * 8
@@ -48,14 +48,14 @@ class Columns25_32_coords(BaseStep):
             if grid != 'WGS-84':
                 return [f"Nepodporovaný systém: {grid}"] + [None] * 7
 
-            lat = parse_coord(row.get('ZSirka_SX', ''))
-            lon = parse_coord(row.get('ZDelka_SX', ''))
+            lat = parse_coord(row.get('ZSirka_S', ''))
+            lon = parse_coord(row.get('ZDelka_S', ''))
 
             return lat + lon
 
-        self._sbirky['Grid_SX'] = self._sbirky['Grid_SX'].fillna('')
-        self._sbirky['ZSirka_SX'] = self._sbirky['ZSirka_SX'].fillna('')
-        self._sbirky['ZDelka_SX'] = self._sbirky['ZDelka_SX'].fillna('')
+        self._sbirky['Grid_'] = self._sbirky['Grid_S'].fillna('')
+        self._sbirky['ZSirka_S'] = self._sbirky['ZSirka_S'].fillna('')
+        self._sbirky['ZDelka_S'] = self._sbirky['ZDelka_S'].fillna('')
         result = self._sbirky.apply(parse_row, axis=1, result_type='expand')
         result.columns = self._column_names
         return result

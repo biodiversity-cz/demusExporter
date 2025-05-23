@@ -7,7 +7,7 @@ class Column6_taxon(BaseStep):
 
     def compute(self) -> pandas.DataFrame:
         result = self._sbirky.apply(
-            lambda row: f"{row.get('Nomen_SX', '')} {row.get('Var_SX', '') if pandas.notna(row.get('Var_SX')) and row.get('Var_SX', '') != '' else ''}".strip(),
+            lambda row: f"{row.get('Nomen_S', '')} {row.get('Var_S', '') if pandas.notna(row.get('Var_S')) and row.get('Var_S', '') != '' else ''}".strip(),
             axis=1
         )
 

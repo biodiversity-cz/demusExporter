@@ -8,7 +8,7 @@ class Columns36_37_altitude(BaseStep):
 
     def compute(self) -> pandas.DataFrame:
         def parse_coord(row):
-            value = row.get('NmVyska_SX', '').strip()
+            value = row.get('NmVyska_S', '').strip()
 
             if not value or pandas.isna(value):
                 return [None, None]
@@ -28,7 +28,7 @@ class Columns36_37_altitude(BaseStep):
 
             return [None, None]
 
-        self._sbirky['NmVyska_SX'] = self._sbirky['NmVyska_SX'].fillna('')
+        self._sbirky['NmVyska_S'] = self._sbirky['NmVyska_S'].fillna('')
         result = self._sbirky.apply(parse_coord, axis=1, result_type='expand')
         result.columns = self._column_names
         return result
