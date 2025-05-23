@@ -4,12 +4,15 @@ import re
 class BaseStep:
     _sbirky: pandas.DataFrame
     _lokality: pandas.DataFrame
+    _adresar: pandas.DataFrame
+    _urceni: pandas.DataFrame
     _column_name: str
 
-    def proceed(self, Sbirky: pandas.DataFrame, Lokality: pandas.DataFrame, Adresar: pandas.DataFrame) -> pandas.DataFrame:
+    def proceed(self, Sbirky: pandas.DataFrame, Lokality: pandas.DataFrame, Adresar: pandas.DataFrame, Urceni: pandas.DataFrame) -> pandas.DataFrame:
         self._sbirky = Sbirky
         self._lokality = Lokality
         self._adresar = Adresar
+        self._urceni = Urceni
         return self.compute()
 
     def compute(self) -> pandas.DataFrame:
