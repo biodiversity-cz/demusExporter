@@ -3,7 +3,11 @@ import pandas
 class Column18_nation_engl(BaseStep):
 
     _column_name="nation_engl"
-
+    _code_map = {
+        'RUS': 'RU',
+        'AUT': 'AT',
+        'CZE': 'CZ',
+    }
     def compute(self) -> pandas.DataFrame:
 
         result = self._sbirky.apply(
@@ -16,7 +20,9 @@ class Column18_nation_engl(BaseStep):
     def _process_nation(self, lokalita_id: str) -> str:
         if not lokalita_id:
             return ''
+
         locality = self._lokality[self._lokality['ZkrLok_L'] == lokalita_id]
         if locality.empty:
             return ''
-        return str(locality.iloc[0].get('Stat_L', '')).strip()
+        stat_l = str(locality.iloc[0].get('Stat_L', '')).strip()
+        return self._code_map.get(stat_l, stat_l)
