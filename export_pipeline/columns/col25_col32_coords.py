@@ -30,8 +30,8 @@ class Columns25_32_coords(BaseStep):
 
             try:
                 deg = int(digits[0:2])
-                min_ = int(digits[2:4]) if len(digits) >= 3 else None
-                sec = int(digits[4:]) if len(digits) >= 5 else None
+                min_ = int(digits[2:4]) if len(digits) >= 4 else None
+                sec = int(digits[4:]) if len(digits) == 6 else None
             except ValueError:
                 return ['Chyba při převodu'] + [None] * 3
 
