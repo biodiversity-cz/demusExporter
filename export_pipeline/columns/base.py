@@ -39,9 +39,9 @@ class BaseStep:
             adresar_str = prijmeni
 
         adresar_str = adresar_str.replace(';', '')
-        adresar_str = adresar_str.replace(' et all.', ' €')
+        adresar_str = adresar_str.replace(' et al.', ' €')
         adresar_str = adresar_str.replace(' et ', ' & ')
-        adresar_str = adresar_str.replace(' €', ' & et all.')
+        adresar_str = adresar_str.replace(' €', ' & et al.')
 
         people = [s.strip() for s in re.split(r',\s*|\s+a\s+|\s+\+\s+|\s+&\s+', adresar_str) if s.strip()]
 

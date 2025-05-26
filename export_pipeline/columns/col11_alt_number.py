@@ -5,7 +5,7 @@ class Column11_alt_number(BaseStep):
     _column_name="alt_number"
 
     def compute(self) -> pandas.DataFrame:
-        self._sbirky['JinaC_S'] = self._sbirky['JinaC_S'].fillna('')
+        self._sbirky['JinaC_S'] = self._sbirky['JinaC_S'].fillna('s.n.')
 
         result = self._sbirky.apply(
             lambda row: str(row.get('JinaC_S', '')).strip(),
