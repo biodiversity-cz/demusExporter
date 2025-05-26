@@ -7,6 +7,16 @@ class Column18_nation_engl(BaseStep):
         'RUS': 'RU',
         'AUT': 'AT',
         'CZE': 'CZ',
+        'SVK': 'SK',
+        'DEU': 'DE',
+        'POL': 'PL',
+        'HUN': 'HU',
+        'ROM': 'RO',
+        'FRA': 'FR',
+        'ESP': 'ES',
+        'GBR': 'UK',
+        'GRC': 'GR',
+        'GEO': 'GE'
     }
     def compute(self) -> pandas.DataFrame:
 
