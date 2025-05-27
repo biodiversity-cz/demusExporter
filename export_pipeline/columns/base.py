@@ -51,3 +51,32 @@ class BaseStep:
             return ' & '.join(people)
 
         return people[0]
+
+    def _build_adresarNameFirts(self, adresar_str: str) -> str:
+        if not pandas.notna(adresar_str) or adresar_str == '':
+            return ''
+
+        autori = self._adresar[self._adresar['ZkrJm_A'] == adresar_str]
+        if autori.empty:
+            return ''
+        prijmeni = str(autori.iloc[0].get('Prijmeni_A', '')).strip()
+        jmeno = str(autori.iloc[0].get('Jmeno_A', '')).strip()
+
+        if jmeno:
+            adresar_str = f"{jmeno[0]}. {prijmeni}"
+        else:
+            adresar_str = prijmeni
+
+        adresar_str = adresar_str.replace(';', '')
+        adresar_str = adresar_str.replace(' et al.', ' €')
+        adresar_str = adresar_str.replace(' et ', ' & ')
+        adresar_str = adresar_str.replace(' €', ' & et al.')
+
+        people = [s.strip() for s in re.split(r',\s*|\s+a\s+|\s+\+\s+|\s+&\s+', adresar_str) if s.strip()]
+
+        if len(people) > 2:
+            return ', '.join(people[:-1]) + ' & ' + people[-1]
+        elif len(people) == 2:
+            return ' & '.join(people)
+
+        return people[0]
