@@ -1,6 +1,23 @@
-from typing import List
 import pandas as pd
 
+from export_pladias.columns.col1 import Column1
+from export_pladias.columns.col2 import Column2
+from export_pladias.columns.col3 import Column3
+from export_pladias.columns.col4 import Column4
+from export_pladias.columns.col5 import Column5
+from export_pladias.columns.col6 import Column6
+from export_pladias.columns.col7 import Column7
+from export_pladias.columns.col8 import Column8
+from export_pladias.columns.col9 import Column9
+from export_pladias.columns.col10 import Column10
+from export_pladias.columns.col11 import Column11
+from export_pladias.columns.col12 import Column12
+from export_pladias.columns.col13 import Column13
+from export_pladias.columns.col14 import Column14
+from export_pladias.columns.col15 import Column15
+from export_pladias.columns.col16 import Column16
+from export_pladias.columns.col17 import Column17
+from export_pladias.columns.col18 import Column18
 from workers.mdb_reader import read_table
 
 class Pipeline:
@@ -8,7 +25,25 @@ class Pipeline:
     TBL_LOKALITY = "Lokality"
     TBL_ADRESAR = "Adresar"
     TBL_URCENI = "Urceni"
-    _steps=[]
+    _steps=[Column1(),
+            Column2(),
+            Column3(),
+            Column4(),
+            Column5(),
+            Column6(),
+            Column7(),
+            Column8(),
+            Column9(),
+            Column10(),
+            Column11(),
+            Column12(),
+            Column13(),
+            Column14(),
+            Column15(),
+            Column16(),
+            Column17(),
+            Column18(),
+            ]
 
     def __init__(self,path: str):
         self._tbl_Sbirky = read_table(path, self.TBL_SBIRKY)
@@ -17,6 +52,7 @@ class Pipeline:
         self._tbl_Urceni = read_table(path, self.TBL_URCENI)
 
         self._tbl_Sbirky = self._tbl_Sbirky.sort_values(by='PorC_S').reset_index(drop=True)
+        self._tbl_Sbirky['Var_S'] = self._tbl_Sbirky['Var_S'].fillna('')
         self._tbl_Sbirky['Grid_S'] = self._tbl_Sbirky['Grid_S'].fillna('')
         self._tbl_Adresar['Jmeno_A'] = self._tbl_Adresar['Jmeno_A'].fillna('')
 

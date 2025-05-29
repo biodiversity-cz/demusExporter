@@ -12,6 +12,7 @@ os.makedirs(RESULT_FOLDER, exist_ok=True)
 def index():
     if request.method == "POST":
         uploaded_file = request.files["file"]
+        export_type = request.form["type"]
         if uploaded_file.filename == "":
             return "Žádný soubor nebyl vybrán"
 
@@ -20,7 +21,7 @@ def index():
         output_path = os.path.join(RESULT_FOLDER, output_filename)
 
         uploaded_file.save(input_path)
-        process_uploaded_file(input_path, output_path)
+        process_uploaded_file(input_path, output_path, export_type)
 
         return send_file(output_path, as_attachment=True)
 
