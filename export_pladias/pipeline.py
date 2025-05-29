@@ -8,9 +8,9 @@ class Pipeline:
     TBL_LOKALITY = "Lokality"
     TBL_ADRESAR = "Adresar"
     TBL_URCENI = "Urceni"
+    _steps=[]
 
-    def __init__(self, steps: List, path: str):
-        self.steps = steps
+    def __init__(self,path: str):
         self._tbl_Sbirky = read_table(path, self.TBL_SBIRKY)
         self._tbl_Lokality = read_table(path, self.TBL_LOKALITY)
         self._tbl_Adresar = read_table(path, self.TBL_ADRESAR)
@@ -22,7 +22,7 @@ class Pipeline:
 
     def run(self) -> pd.DataFrame:
         all_dataframes = []
-        for step in self.steps:
+        for step in self._steps:
             df = step.proceed(self._tbl_Sbirky, self._tbl_Lokality, self._tbl_Adresar, self._tbl_Urceni)
             all_dataframes.append(df)
 
