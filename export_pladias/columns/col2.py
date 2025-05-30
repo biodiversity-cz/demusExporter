@@ -15,5 +15,5 @@ class Column2(BaseStep):
 
     def _build_item(self, row) -> str:
 
-        return f"?".strip()
+        return f"co dát sem - poslední revizi, první revizi?".strip()
 

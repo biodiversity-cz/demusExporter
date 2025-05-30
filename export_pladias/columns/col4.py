@@ -17,5 +17,5 @@ class Column4(BaseStep):
 
     def _build_item(self, row) -> str:
 
-        return f"?".strip()
+        return f"tento a obdobné sloupce - u záznamů s přesnou souřadnicí můžeme provolávat api pro georeferencování, ale co u těch (mnoha) záznamů které mají #? v souřadnicícch?".strip()
 
