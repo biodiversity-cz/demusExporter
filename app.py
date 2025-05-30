@@ -17,7 +17,7 @@ def index():
             return "Žádný soubor nebyl vybrán"
 
         input_path = os.path.join(UPLOAD_FOLDER, uploaded_file.filename)
-        output_filename = uploaded_file.filename.rsplit(".", 1)[0] + "_output.xlsx"
+        output_filename = uploaded_file.filename.rsplit(".", 1)[0] + "_" + export_type + "output.xlsx"
         output_path = os.path.join(RESULT_FOLDER, output_filename)
 
         uploaded_file.save(input_path)
