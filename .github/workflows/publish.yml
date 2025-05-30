@@ -2,7 +2,7 @@ name: Create and publish a Docker image
 on:
     push:
         branches:
-            - webalize
+            - main
         tags: [ '*' ]
     workflow_dispatch:  # Manual run
 
