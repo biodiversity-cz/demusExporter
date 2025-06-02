@@ -1,7 +1,7 @@
 import pandas as pd
 
+from export_jacq.columns.col17_taxon_alt import Column17_taxon_alt
 from export_pladias.columns.col1 import Column1
-from export_pladias.columns.col2 import Column2
 from export_pladias.columns.col3 import Column3
 from export_pladias.columns.col4 import Column4
 from export_pladias.columns.col5 import Column5
@@ -26,7 +26,7 @@ class Pipeline:
     TBL_ADRESAR = "Adresar"
     TBL_URCENI = "Urceni"
     _steps=[Column1(),
-            Column2(),
+            Column17_taxon_alt(),
             Column3(),
             Column4(),
             Column5(),

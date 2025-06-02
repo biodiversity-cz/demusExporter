@@ -27,5 +27,5 @@ class Column17(BaseStep):
         result_str = str(result)
         if len(result_str) < 7:
             result_str = result_str.zfill(7)
-        return result_str
+        return f"{str(row.get('Herbar_S', '')).strip()}_{result_str}"
 

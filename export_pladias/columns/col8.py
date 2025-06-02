@@ -17,5 +17,5 @@ class Column8(BaseStep):
 
     def _build_item(self, row) -> str:
 
-        return f"originální souřadnice od autora údaje".strip()
+        return f"".strip()
 

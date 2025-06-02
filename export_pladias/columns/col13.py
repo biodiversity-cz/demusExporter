@@ -16,5 +16,5 @@ class Column13(BaseStep):
         return pandas.DataFrame({self._column_name: result})
 
     def _build_item(self, row) -> str:
-        return str(row.get('Herbar_S', '')).strip()
+        return f"herb{str(row.get('Herbar_S', '')).strip()}"
 

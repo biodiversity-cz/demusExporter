@@ -17,5 +17,5 @@ class Column14(BaseStep):
 
     def _build_item(self, row) -> str:
 
-        return f"?".strip()
+        return f"".strip()
 
