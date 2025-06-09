@@ -6,12 +6,16 @@ class Column2_HerbNummer(BaseStep):
 
     def _convert_row(self, row) -> str:
         por_c = str(row.get('PorC_S', ''))
-        if len(por_c) < 7:
-            por_c = por_c.zfill(7)
         lomeni = row.get('Lomeni_S', '')
         if lomeni != '_':
+            if len(por_c) < 5:
+                por_c = por_c.zfill(5)
+            if len(lomeni) < 2:
+                lomeni = lomeni.zfill(2)
             result = f"{por_c}/{lomeni}"
         else:
+            if len(por_c) < 7:
+                por_c = por_c.zfill(7)
             result = por_c
 
         return result
