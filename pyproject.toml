@@ -1,0 +1,14 @@
+[project]
+name = "demusExporter"
+version = "0.1.0"
+description = "Convert MDB export from DEMUS to Pladias or JACQ format"
+authors = [{ name = "Petr Novotný" }]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "pandas",
+    "openpyxl",
+    "sqlalchemy",
+    "mdbtools",
+    "pyodbc"
+]

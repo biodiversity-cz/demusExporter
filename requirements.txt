@@ -1,7 +1,0 @@
-pandas
-openpyxl
-sqlalchemy
-mdbtools
-pyodbc
-flask
-gunicorn
