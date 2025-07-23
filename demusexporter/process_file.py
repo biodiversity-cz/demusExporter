@@ -1,7 +1,7 @@
-from demusExporter.exportTypes import ExportTypes
-from demusExporter.workers.excel_writer import write_to_excel
-from demusExporter.export_jacq.pipeline import Pipeline as Jacq
-from demusExporter.export_pladias.pipeline import Pipeline as Pladias
+from demusexporter.exportTypes import ExportTypes
+from demusexporter.workers.excel_writer import write_to_excel
+from demusexporter.export_jacq.pipeline import Pipeline as Jacq
+from demusexporter.export_pladias.pipeline import Pipeline as Pladias
 
 def process_uploaded_file(input_path, output_path, type_str: str):
     export_type = ExportTypes(type_str)

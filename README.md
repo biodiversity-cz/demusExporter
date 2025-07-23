@@ -7,11 +7,9 @@ convert from old Czech herbaria&museums software [DEMUS](https://www.citem.cz/ci
 sudo apt update
 sudo apt install mdbtools unixodbc-dev 
 
-python3 -m venv venv
-source venv/bin/activate
+poetry env use python3.13
+poetry install
 
-pip install .
-
-python test.py
+poetry run python test.py
 ```
 

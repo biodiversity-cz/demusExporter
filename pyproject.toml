@@ -1,14 +1,17 @@
-[project]
-name = "demusExporter"
-version = "0.1.0"
+[tool.poetry]
+name = "demusexporter"
+version = "0.2.0"
 description = "Convert MDB export from DEMUS to Pladias or JACQ format"
-authors = [{ name = "Petr Novotný" }]
-readme = "README.md"
-requires-python = ">=3.7"
-dependencies = [
-    "pandas",
-    "openpyxl",
-    "sqlalchemy",
-    "mdbtools",
-    "pyodbc"
+authors = [
+    "Petr Novotný <krkabol@gmail.com>"
 ]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pandas = "^2"
+openpyxl = "^3"
+sqlalchemy = "^2"
+mdbtools = "^0"
+pyodbc = "^5"

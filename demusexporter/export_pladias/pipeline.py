@@ -1,24 +1,24 @@
 import pandas as pd
 
-from demusExporter.export_jacq.columns.col17_taxon_alt import Column17_taxon_alt
-from demusExporter.export_pladias.columns.col1 import Column1
-from demusExporter.export_pladias.columns.col3 import Column3
-from demusExporter.export_pladias.columns.col4 import Column4
-from demusExporter.export_pladias.columns.col5 import Column5
-from demusExporter.export_pladias.columns.col6 import Column6
-from demusExporter.export_pladias.columns.col7 import Column7
-from demusExporter.export_pladias.columns.col8 import Column8
-from demusExporter.export_pladias.columns.col9 import Column9
-from demusExporter.export_pladias.columns.col10 import Column10
-from demusExporter.export_pladias.columns.col11 import Column11
-from demusExporter.export_pladias.columns.col12 import Column12
-from demusExporter.export_pladias.columns.col13 import Column13
-from demusExporter.export_pladias.columns.col14 import Column14
-from demusExporter.export_pladias.columns.col15 import Column15
-from demusExporter.export_pladias.columns.col16 import Column16
-from demusExporter.export_pladias.columns.col17 import Column17
-from demusExporter.export_pladias.columns.col18 import Column18
-from demusExporter.workers.mdb_reader import read_table
+from demusexporter.export_jacq.columns.col17_taxon_alt import Column17_taxon_alt
+from demusexporter.export_pladias.columns.col1 import Column1
+from demusexporter.export_pladias.columns.col3 import Column3
+from demusexporter.export_pladias.columns.col4 import Column4
+from demusexporter.export_pladias.columns.col5 import Column5
+from demusexporter.export_pladias.columns.col6 import Column6
+from demusexporter.export_pladias.columns.col7 import Column7
+from demusexporter.export_pladias.columns.col8 import Column8
+from demusexporter.export_pladias.columns.col9 import Column9
+from demusexporter.export_pladias.columns.col10 import Column10
+from demusexporter.export_pladias.columns.col11 import Column11
+from demusexporter.export_pladias.columns.col12 import Column12
+from demusexporter.export_pladias.columns.col13 import Column13
+from demusexporter.export_pladias.columns.col14 import Column14
+from demusexporter.export_pladias.columns.col15 import Column15
+from demusexporter.export_pladias.columns.col16 import Column16
+from demusexporter.export_pladias.columns.col17 import Column17
+from demusexporter.export_pladias.columns.col18 import Column18
+from demusexporter.workers.mdb_reader import read_table
 
 class Pipeline:
     TBL_SBIRKY = "Sbirky"
