@@ -1,15 +1,31 @@
 from demusexporter.exportTypes import ExportTypes
+from demusexporter.workers.dwc_writer import create_dwc
 from demusexporter.workers.excel_writer import write_to_excel
 from demusexporter.export_jacq.pipeline import Pipeline as Jacq
+from demusexporter.export_dwc.pipeline import Pipeline as DwC
 from demusexporter.export_pladias.pipeline import Pipeline as Pladias
 
-def process_uploaded_file(input_path, output_path, type_str: str):
-    export_type = ExportTypes(type_str)
+def process_uploaded_file(input_path, output_path, type_str: str,
+                          dwc_description: str = "Dataset created from DEMUS data",
+                          dwc_license_name: str = "Creative Commons Attribution 4.0 International",
+                          dwc_citation: str = "DEMUS, Czech Republic",
+                          dwc_rights: str = ""):
+    pipeline_map = {
+        ExportTypes.JACQ.value: Jacq,
+        ExportTypes.PLADIAS.value: Pladias,
+        ExportTypes.DWC.value: DwC,
+    }
 
-    if export_type == ExportTypes.JACQ:
-        pipeline = Jacq(input_path)
-    else:
-        pipeline = Pladias(input_path)
+    entry = pipeline_map.get(type_str)
+    if not entry:
+        raise ValueError(f"Neznámý exportní typ: {type_str}")
 
+    pipeline_class = entry
+    pipeline = pipeline_class(input_path)
     output_data = pipeline.run()
-    write_to_excel(output_data, output_path)
+
+    if type_str == ExportTypes.DWC.value:
+        create_dwc(output_data, output_path, dwc_description, dwc_license_name, dwc_citation,
+                   dwc_rights)
+    else:
+        write_to_excel(output_data, output_path)
