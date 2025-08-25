@@ -18,7 +18,7 @@ class Column6(BaseStep):
 
     def _build_item(self, row) -> str:
 
-        value = row.get('NmVyska_S', '').strip()
+        value = str(row.get('NmVyska_S', '')).strip()
 
         if not value or pandas.isna(value):
             return f""

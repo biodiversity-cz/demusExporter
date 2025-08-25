@@ -8,7 +8,7 @@ class Columns36_37_altitude(BaseStep):
 
     def compute(self) -> pandas.DataFrame:
         def parse_coord(row):
-            value = row.get('NmVyska_S', '').strip()
+            value = str(row.get('NmVyska_S', '')).strip()
 
             if not value or pandas.isna(value):
                 return [None, None]
