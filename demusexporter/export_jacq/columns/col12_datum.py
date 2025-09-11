@@ -2,7 +2,7 @@ from .base import BaseStep
 import pandas
 class Column12_datum(BaseStep):
 
-    _column_name="datum"
+    _column_name="Datum"
 
     def compute(self) -> pandas.DataFrame:
         self._sbirky['DatSberu_S'] = self._sbirky['DatSberu_S'].fillna('s.d.')
