@@ -41,7 +41,7 @@ class Column17_taxon_alt(BaseStep):
             rok = daturc[:4] if daturc else ''
             text = f"{self._build_adresarNameFirts(str(row['Urcil_UR']).strip())}"
             if rok:
-                text += f" ({rok})"
+                text += f" {rok}"
             text += f": {str(row['Nomen_UR']).strip()}"
             polozky.append(text)
 
