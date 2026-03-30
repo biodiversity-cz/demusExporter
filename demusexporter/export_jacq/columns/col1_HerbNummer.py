@@ -1,6 +1,6 @@
 from .base import BaseStep
 import pandas
-class Column2_HerbNummer(BaseStep):
+class Column1_HerbNummer(BaseStep):
 
     _column_name="HerbNummer"
 

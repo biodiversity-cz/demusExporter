@@ -13,7 +13,7 @@ from demusexporter.export_jacq.columns.col21_Fundort_engl import Column21_Fundor
 from demusexporter.export_jacq.columns.col22_Habitat import Column22_Habitat
 from demusexporter.export_jacq.columns.col23_Habitus import Column23_Habitus
 from demusexporter.export_jacq.columns.col24_Bemerkungen import Column24_Bemerkungen
-from demusexporter.export_jacq.columns.col2_HerbNummer import Column2_HerbNummer
+from demusexporter.export_jacq.columns.col1_HerbNummer import Column1_HerbNummer
 from demusexporter.export_jacq.columns.col33_exactness import Column33_exactness
 from demusexporter.export_jacq.columns.col34_quadrant import Column34_quadrant
 from demusexporter.export_jacq.columns.col35_quadrant_sub import Column35_quadrnat_sub
@@ -30,7 +30,7 @@ from demusexporter.export_jacq.columns.col8_series import Column8_series
 from demusexporter.export_jacq.columns.col9_series_number import Column9_series_number
 from demusexporter.export_jacq.columns.col11_alt_number import Column11_alt_number
 from demusexporter.export_jacq.columns.col25_col32_coords import Columns25_32_coords
-from demusexporter.export_jacq.columns.col1_id import Column1_ID
+from demusexporter.export_jacq.columns.col2_institution import Column2_Institution
 from demusexporter.workers.mdb_reader import read_table
 
 class Pipeline:
@@ -39,8 +39,8 @@ class Pipeline:
     TBL_ADRESAR = "Adresar"
     TBL_URCENI = "Urceni"
     _steps = [
-        Column1_ID(),
-        Column2_HerbNummer(),
+        Column1_HerbNummer(),
+        Column2_Institution(),
         Column3_CollectionID(),
         Column4_Collection(),
         Column5_status(),

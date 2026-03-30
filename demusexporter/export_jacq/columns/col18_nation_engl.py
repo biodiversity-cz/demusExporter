@@ -4,19 +4,19 @@ class Column18_nation_engl(BaseStep):
 
     _column_name="nation_engl"
     _code_map = {
-        'RUS': 'RU',
-        'AUT': 'AT',
-        'CZE': 'CZ',
-        'SVK': 'SK',
-        'DEU': 'DE',
-        'POL': 'PL',
-        'HUN': 'HU',
-        'ROM': 'RO',
-        'FRA': 'FR',
-        'ESP': 'ES',
-        'GBR': 'UK',
-        'GRC': 'GR',
-        'GEO': 'GE'
+        'RUS': 'Russian Federation',
+        'AUT': 'Austria',
+        'CZE': 'Czech Republic',
+        'SVK': 'Slovakia',
+        'DEU': 'Germany',
+        'POL': 'Poland',
+        'HUN': 'Hungary',
+        'ROM': 'Romania',
+        'FRA': 'France',
+        'ESP': 'Spain',
+        'GBR': 'United Kingdom',
+        'GRC': 'Greece',
+        'GEO': 'Georgia'
     }
     def compute(self) -> pandas.DataFrame:
 
