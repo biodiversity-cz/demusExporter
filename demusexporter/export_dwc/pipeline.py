@@ -16,7 +16,7 @@ from demusexporter.export_dwc.columns.col9_decimalLongitude import DecimalLongit
 
 from demusexporter.workers.mdb_reader import read_table
 
-
+#  deprecated
 class Pipeline:
     TBL_SBIRKY = "Sbirky"
     TBL_LOKALITY = "Lokality"
